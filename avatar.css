@@ -1,0 +1,146 @@
+body {
+  background-image: url(./images/mapa.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: full;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seleccionar-avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(185, 159, 120, 0.5);
+  border-radius: 5%;
+  padding: 20px;
+}
+input {
+  display: none;
+}
+h2 {
+  font-family: "Herculanum", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  font-family: "Herculanum", sans-serif;
+}
+.logo {
+  height: 110px;
+  width: 300px;
+  margin: auto;
+}
+.subtitle {
+  font-size: 20px;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+}
+.card {
+  font-family: "Herculanum", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transition: ease-in-out;
+}
+
+label:hover {
+  border-radius: 12px;
+  background: #e0e0e0;
+}
+
+input:checked + label {
+  border-radius: 12px;
+  background: #e0e0e0;
+}
+
+.card img {
+  width: 157px;
+  height: 314px;
+  border-radius: 5%;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items:center ;
+  font-family: "Herculanum", sans-serif;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 15px;
+  border: 1px solid #facd8c;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+}
+
+.seleccionar-ataque {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(185, 159, 120, 0.5);
+  border-radius: 5%;
+  padding: 20px;
+  background-color: rgba(185, 159, 120, 0.5);
+  padding: 20px;
+}
+
+#mensajes {
+  background-color: #e0e0e0;
+  font-family: "Herculanum", sans-serif;
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 312px;
+}
+
+.all {
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#avatar-jugador-elegido {
+  display: flex;
+  flex-direction: column;
+}
+
+#vidas-jugador, #vidas-enemigo {
+  font-size: 44px;
+}
+
+.stats {
+  font-family: "Herculanum", sans-serif;
+  background-color: #facd8c;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  border-radius: 5%;
+}
+
+@media (max-width: 360px) {
+  .cards, .buttons {
+    flex-direction: column;
+  }
+}

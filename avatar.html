@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVATAR!</title>
+    <script src="./js/avatar.js"></script>
+    <link rel="stylesheet" href="./avatar.css" />
+    <link rel="stylesheet" href="./fuente.css" />
+  </head>
+  <body>
+    <h1 id="title">
+      <img title="logo" class="logo" src="./images/logo.png" />
+    </h1>
+    <section id="seleccionar-avatar">
+      <!-- <section id="instrucciones">
+        <p>TIERRA mata AGUA | FUEGO mata AIRE |AGUA mata FUEGO| AIRE mata TIERRA</p>
+      </section> -->
+
+      <h2 class="subtitle">Elige tu avatar:</h2>
+      <div class="cards">
+        <input type="radio" name="avatar" id="kyoshi" /><label
+          class="card"
+          for="kyoshi"
+        >
+          <p>Kyoshi</p>
+          <img id="avatar-kyoshi" src="./images/kyoshi.jpg" alt="Kyoshi" />
+        </label>
+        <input type="radio" name="avatar" id="roku" /><label
+          class="card"
+          for="roku"
+        >
+          <p>Roku</p>
+          <img id="avatar-roku" src="./images/roku.jpg" alt="Roku" />
+        </label>
+        <input type="radio" name="avatar" id="korra" /><label
+          class="card"
+          for="korra"
+        >
+          <p>Korra</p>
+          <img id="avatar-korra" src="./images/korra.jpg" alt="Korra" />
+        </label>
+        <input type="radio" name="avatar" id="aang" /><label
+          class="card"
+          for="aang"
+        >
+          <p>Aang</p>
+          <img id="avatar-aang" src="./images/aang.jpg" alt="Aang" />
+        </label>
+      </div>
+      <button id="boton-avatar">SELECCIONAR</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+      <div class="seleccionar-ataque">
+        <div id="avatar-jugador-elegido"></div>
+        <div class="stats">
+          <p id="avatar-jugador"></p>
+          <p id="vidas-jugador">3</p>
+          <div id="ataques-del-jugador"></div>
+        </div>
+        <div class="all">
+          <div class="subtitle">
+            <h2>Elige tu ataque:</h2>
+          </div>
+          <div class="buttons">
+            <button id="boton-fuego">
+              <img
+                title="fuego"
+                height="20"
+                width="20"
+                src="./images/fuego.jpg"
+              />Fuego
+            </button>
+            <button id="boton-agua">
+              <img
+                title="agua"
+                height="20"
+                width="20"
+                src="./images/agua.jpg"
+              />Agua
+            </button>
+            <button id="boton-tierra">
+              <img title="tierra height="20" width="20"
+              src="./images/tierra.png">Tierra
+            </button>
+            <button id="boton-aire">
+              <img
+                title="aire"
+                height="20"
+                width="20"
+                src="./images/aire.jpg"
+              />Aire
+            </button>
+          </div>
+          <div id="mensajes">
+            <p id="resultado">Que gane el mejor!</p>
+            <section id="reiniciar">
+              <button id="boton-reiniciar">VOLVER A JUGAR</button>
+            </section>
+          </div>
+        </div>
+        <div class="stats">
+          <p id="avatar-enemigo"></p>
+          <p id="vidas-enemigo">3</p>
+          vidas
+          <div id="ataques-del-enemigo"></div>
+        </div>
+        <div id="avatar-enemigo-elegido"></div>
+      </div>
+    </section>
+  </body>
+</html>
