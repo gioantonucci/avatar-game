@@ -1,3 +1,25 @@
+//----------SELECCION DE ELEMENTOS DE HTML---------------------
+const sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+const sectionSeleccionarAvatar = document.getElementById("seleccionar-avatar");
+const botonFuego = document.getElementById("boton-fuego");
+const botonAgua = document.getElementById("boton-agua");
+const botonTierra = document.getElementById("boton-tierra");
+const botonAire = document.getElementById("boton-aire");
+const botonReiniciar = document.getElementById("boton-reiniciar");
+const inputKyoshi = document.getElementById("kyoshi");
+const inputRoku = document.getElementById("roku");
+const inputKorra = document.getElementById("korra");
+const inputAang = document.getElementById("aang");
+const spanavatarJugador = document.getElementById("avatar-jugador");
+const imgAvatarJugador = document.getElementById("avatar-jugador-elegido");
+const spanAvatarEnemigo = document.getElementById("avatar-enemigo");
+const imgAvatarEnemigo = document.getElementById("avatar-enemigo-elegido");
+const spanVidasJugador = document.getElementById("vidas-jugador");
+const spanVidasEnemigo = document.getElementById("vidas-enemigo");
+const sectionMensajes = document.getElementById("resultado");
+const ataquesDelJugador = document.getElementById("ataques-del-jugador");
+const ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
+//-------------VARIABLES----------------------------------------
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3;
@@ -10,84 +32,75 @@ let korraImage = new Image(200, 400);
 korraImage.src = "./images/korra.jpg";
 let aangImage = new Image(200, 400);
 aangImage.src = "./images/aang.jpg";
+//--------------------CLASES-------------------
+class Avatar {
+  constructor(nombre, imagen, vida) {
+      this.nombre = nombre
+      this.imagen = imagen
+      this.vida = vida
+  }
+} 
+let kyoshi = new Avatar('Kyoshi', kyoshiImage, 3)
+let roku = new Avatar('Roku', rokuImage, 3)
+let korra = new Avatar('Korra', korraImage, 3)
+let aang = new Avatar('Aang', aangImage, 3)
 
-let avatar = {
-  Kyoshi: { name: "Kyoshi", img: kyoshiImage },
-  Roku: { name: "Roku", img: rokuImage },
-  Korra: { name: "Korra", img: korraImage },
-  Aang: { name: "Aang", img: aangImage },
-};
 
+//---------------------FUNCIONES---------------------
+function aleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 function iniciarJuego() {
-  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
   sectionSeleccionarAtaque.style.display = "none";
-  let sectionSeleccionaravatar = document.getElementById("boton-reiniciar");
-  sectionSeleccionaravatar.style.display = "none";
+  sectionSeleccionarAvatar.style.display = "flex";
 
   let botonAvatarJugador = document.getElementById("boton-avatar");
-  botonAvatarJugador.addEventListener("click", seleccionaravatarJugador);
+  botonAvatarJugador.addEventListener("click", seleccionarAvatarJugador);
 
-  let botonFuego = document.getElementById("boton-fuego");
   botonFuego.addEventListener("click", ataqueFuego);
-  let botonAgua = document.getElementById("boton-agua");
   botonAgua.addEventListener("click", ataqueAgua);
-  let botonTierra = document.getElementById("boton-tierra");
   botonTierra.addEventListener("click", ataqueTierra);
-  let botonAire = document.getElementById("boton-aire");
   botonAire.addEventListener("click", ataqueAire);
-  let botonReiniciar = document.getElementById("boton-reiniciar");
   botonReiniciar.addEventListener("click", reiniciarJuego);
 }
-function seleccionaravatarJugador() {
-  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+function seleccionarAvatarJugador() {
   sectionSeleccionarAtaque.style.display = "flex";
-  let sectionSeleccionaravatar = document.getElementById("seleccionar-avatar");
-  sectionSeleccionaravatar.style.display = "none";
-
-  let inputKyoshi = document.getElementById("kyoshi");
-  let inputRoku = document.getElementById("roku");
-  let inputKorra = document.getElementById("korra");
-  let inputAang = document.getElementById("aang");
-  let spanavatarJugador = document.getElementById("avatar-jugador");
-  let imgAvatarJugador = document.getElementById("avatar-jugador-elegido");
+  sectionSeleccionarAvatar.style.display = "none";
+  botonReiniciar.style.display = "none";
 
   if (inputKyoshi.checked) {
-    spanavatarJugador.innerHTML = avatar.Kyoshi.name;
-    imgAvatarJugador.appendChild(avatar.Kyoshi.img);
+    spanavatarJugador.innerHTML = kyoshi.nombre;
+    imgAvatarJugador.appendChild(kyoshi.imagen);
   } else if (inputRoku.checked) {
-    spanavatarJugador.innerHTML = avatar.Roku.name;
-    imgAvatarJugador.appendChild(avatar.Roku.img);
+    spanavatarJugador.innerHTML = roku.nombre;
+    imgAvatarJugador.appendChild(roku.imagen);
   } else if (inputKorra.checked) {
-    spanavatarJugador.innerHTML = avatar.Korra.name;
-    imgAvatarJugador.appendChild(avatar.Korra.img);
+    spanavatarJugador.innerHTML = korra.nombre;
+    imgAvatarJugador.appendChild(korra.imagen);
   } else if (inputAang.checked) {
-    spanavatarJugador.innerHTML = avatar.Aang.name;
-    imgAvatarJugador.appendChild(avatar.Aang.img);
+    spanavatarJugador.innerHTML = aang.nombre;
+    imgAvatarJugador.appendChild(aang.imagen);
   } else {
     alert("Selecciona un avatar para empezar!");
     reiniciarJuego();
   }
   seleccionarAvatarEnemigo();
 }
-function aleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 function seleccionarAvatarEnemigo() {
   let avatarAleatorio = aleatorio(1, 4);
-  let spanAvatarEnemigo = document.getElementById("avatar-enemigo");
-  let imgAvatarEnemigo = document.getElementById("avatar-enemigo-elegido");
   if (avatarAleatorio == 1) {
-    spanAvatarEnemigo.innerHTML = avatar.Kyoshi.name;
-    imgAvatarEnemigo.appendChild(avatar.Kyoshi.img);
+    spanAvatarEnemigo.innerHTML = kyoshi.nombre;
+    imgAvatarEnemigo.appendChild(kyoshi.imagen);
   } else if (avatarAleatorio == 2) {
-    spanAvatarEnemigo.innerHTML = avatar.Roku.name;
-    imgAvatarEnemigo.appendChild(avatar.Roku.img);
+    spanAvatarEnemigo.innerHTML = roku.nombre;
+    imgAvatarEnemigo.appendChild(roku.imagen);
   } else if (avatarAleatorio == 3) {
-    spanAvatarEnemigo.innerHTML = avatar.Korra.name;
-    imgAvatarEnemigo.appendChild(avatar.Korra.img);
+    spanAvatarEnemigo.innerHTML = korra.nombre;
+    imgAvatarEnemigo.appendChild(korra.imagen);
   } else {
-    spanAvatarEnemigo.innerHTML = avatar.Aang.name;
-    imgAvatarEnemigo.appendChild(avatar.Aang.img);
+    spanAvatarEnemigo.innerHTML = aang.nombre;
+    imgAvatarEnemigo.appendChild(aang.imagen);
   }
 }
 function ataqueFuego() {
@@ -110,7 +123,7 @@ function ataqueAleatorioEnemigo() {
   let ataqueAleatorio = aleatorio(1, 4);
 
   if (ataqueAleatorio == 1) {
-    ataqueEnemigo = 'FUEGO';
+    ataqueEnemigo = "FUEGO";
   } else if (ataqueAleatorio == 2) {
     ataqueEnemigo = "AGUA";
   } else if (ataqueAleatorio == 3) {
@@ -121,9 +134,6 @@ function ataqueAleatorioEnemigo() {
   combate();
 }
 function combate() {
-  let spanVidasJugador = document.getElementById("vidas-jugador");
-  let spanVidasEnemigo = document.getElementById("vidas-enemigo");
-
   if (ataqueJugador == ataqueEnemigo) {
     crearMensaje("Empate 🤣");
   } else if (ataqueJugador == "FUEGO" && ataqueEnemigo == "AIRE") {
@@ -157,36 +167,25 @@ function revisarVidas() {
   }
 }
 function crearMensaje(resultado) {
-  let sectionMensajes = document.getElementById("resultado");
-  let ataquesDelJugador = document.getElementById("ataques-del-jugador");
-  let ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
-
   let notificacion = document.createElement("p");
   let nuevoAtaqueDelJugador = document.createElement("p");
   let nuevoAtaqueDelEnemigo = document.createElement("p");
 
   notificacion.innerHTML = resultado;
-  nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-  nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+  nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
+  nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
 
   sectionMensajes.appendChild(notificacion);
   ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
   ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
 }
 function crearMensajeFinal(resultadoFinal) {
-  let sectionSeleccionaravatar = document.getElementById("boton-reiniciar");
-  sectionSeleccionaravatar.style.display = "flex";
-  
-  let sectionMensajes = document.getElementById("resultado");
+  botonReiniciar.style.display = "flex";
   sectionMensajes.innerHTML = resultadoFinal;
 
-  let botonFuego = document.getElementById("boton-fuego");
   botonFuego.disabled = true;
-  let botonAgua = document.getElementById("boton-agua");
   botonAgua.disabled = true;
-  let botonTierra = document.getElementById("boton-tierra");
   botonTierra.disabled = true;
-  let botonAire = document.getElementById("boton-aire");
   botonAire.disabled = true;
 }
 function reiniciarJuego() {

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AVATAR!</title>
-    <script src="./js/avatar.js"></script>
+    
     <link rel="stylesheet" href="./avatar.css" />
     <link rel="stylesheet" href="./fuente.css" />
   </head>
@@ -14,10 +14,6 @@
       <img title="logo" class="logo" src="./images/logo.png" />
     </h1>
     <section id="seleccionar-avatar">
-      <!-- <section id="instrucciones">
-        <p>TIERRA mata AGUA | FUEGO mata AIRE |AGUA mata FUEGO| AIRE mata TIERRA</p>
-      </section> -->
-
       <h2 class="subtitle">Elige tu avatar:</h2>
       <div class="cards">
         <input type="radio" name="avatar" id="kyoshi" /><label
@@ -53,7 +49,9 @@
     </section>
 
     <section id="seleccionar-ataque">
+     
       <div class="seleccionar-ataque">
+       
         <div id="avatar-jugador-elegido"></div>
         <div class="stats">
           <p id="avatar-jugador"></p>
@@ -70,7 +68,7 @@
                 title="fuego"
                 height="20"
                 width="20"
-                src="./images/fuego.jpg"
+                src="./images/fuego.png"
               />Fuego
             </button>
             <button id="boton-agua">
@@ -78,7 +76,7 @@
                 title="agua"
                 height="20"
                 width="20"
-                src="./images/agua.jpg"
+                src="./images/agua.png"
               />Agua
             </button>
             <button id="boton-tierra">
@@ -90,7 +88,7 @@
                 title="aire"
                 height="20"
                 width="20"
-                src="./images/aire.jpg"
+                src="./images/aire.png"
               />Aire
             </button>
           </div>
@@ -104,11 +102,11 @@
         <div class="stats">
           <p id="avatar-enemigo"></p>
           <p id="vidas-enemigo">3</p>
-          vidas
           <div id="ataques-del-enemigo"></div>
         </div>
         <div id="avatar-enemigo-elegido"></div>
       </div>
     </section>
+    <script src="./js/avatar.js"></script>
   </body>
 </html>
