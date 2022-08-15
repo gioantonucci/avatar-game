@@ -232,15 +232,13 @@ function revisarVidas() {
   }
 }
 function crearMensaje(resultado) {
-  let notificacion = document.createElement("p");
   let nuevoAtaqueDelJugador = document.createElement("p");
   let nuevoAtaqueDelEnemigo = document.createElement("p");
 
-  notificacion.innerHTML = resultado;
+  sectionMensajes.innerHTML = resultado;
   nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
   nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
 
-  sectionMensajes.appendChild(notificacion);
   ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
   ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
 }
