@@ -38,6 +38,15 @@ let vidasJugador = 3;
 let vidasEnemigo = 3;
 let lienzo = mapa.getContext("2d");
 let intervalo;
+let altoMapa;
+let anchoMapa = window.innerWidth -20
+altoMapa = anchoMapa * 600 / 800
+anchoMaximo = 600
+mapa.width = anchoMapa;
+mapa.height = altoMapa;
+if(anchoMapa > anchoMaximo) {
+  anchoMapa = anchoMaximo - 20
+}
 //-------------IMAGENES----------------------------------------
 let kyoshiImage = new Image(200, 400);
 kyoshiImage.src = "./images/kyoshi.jpg";
@@ -65,10 +74,10 @@ class Avatar {
     this.vida = vida;
     this.mapaFoto = mapaFoto;
     this.ataques = [];
-    this.x = x;
-    this.y = y;
     this.ancho = 80;
     this.alto = 80;
+    this.x = aleatorio(0, mapa.width - this.ancho)
+    this.y = aleatorio(0, mapa.height - this.alto);
     this.velocidadX = 0;
     this.velocidadY = 0;
   }
@@ -82,10 +91,10 @@ let roku = new Avatar("Roku", rokuImage, 3, rokuPJ);
 let korra = new Avatar("Korra", korraImage, 3, korraPJ);
 let aang = new Avatar("Aang", aangImage, 3, aangPJ);
 
-let kyoshiEnemigo = new Avatar("Kyoshi", kyoshiImage, 3, kyoshiPJ, 560, 95);
-let rokuEnemigo = new Avatar("Roku", rokuImage, 3, rokuPJ, 145, 420);
-let korraEnemigo = new Avatar("Korra", korraImage, 3, korraPJ, 145, 95);
-let aangEnemigo = new Avatar("Aang", aangImage, 3, aangPJ, 560, 420);
+let kyoshiEnemigo = new Avatar("Kyoshi", kyoshiImage, 3, kyoshiPJ);
+let rokuEnemigo = new Avatar("Roku", rokuImage, 3, rokuPJ);
+let korraEnemigo = new Avatar("Korra", korraImage, 3, korraPJ);
+let aangEnemigo = new Avatar("Aang", aangImage, 3, aangPJ);
 
 kyoshi.ataques.push(
   { nombre: "fuego", id: "boton-fuego" },
@@ -196,10 +205,11 @@ function seleccionarAvatarJugador() {
 }
 
 function iniciarMapa() {
-  mapa.width = 800;
-  mapa.height = 600;
-  avatarElegido = personaje(avatarJugador);
-  intervalo = setInterval(mostrarCanvas, 50);
+   avatarElegido = personaje(avatarJugador);
+   intervalo = setInterval(mostrarCanvas, 50);
+ 
+ 
+
   window.addEventListener("keydown", teclaPresionada);
   window.addEventListener("keyup", detenerMovimiento);
 }
@@ -282,6 +292,7 @@ function revisarColision(enemigo) {
     return;
   }
   detenerMovimiento();
+  clearInterval(intervalo);
   sectionSeleccionarAtaque.style.display = "flex";
   sectionMapa.style.display = "none";
   seleccionarAvatarEnemigo(enemigo);
