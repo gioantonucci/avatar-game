@@ -38,15 +38,18 @@ let vidasJugador = 3;
 let vidasEnemigo = 3;
 let lienzo = mapa.getContext("2d");
 let intervalo;
-let altoMapa;
-let anchoMapa = window.innerWidth -20
-altoMapa = anchoMapa * 600 / 800
-anchoMaximo = 600
-mapa.width = anchoMapa;
-mapa.height = altoMapa;
-if(anchoMapa > anchoMaximo) {
-  anchoMapa = anchoMaximo - 20
+let alturaQueBuscamos
+let anchoDelMapa = window.innerWidth - 20
+const anchoMaximoDelMapa = 800
+
+if (anchoDelMapa > anchoMaximoDelMapa) {
+    anchoDelMapa = anchoMaximoDelMapa - 20
 }
+
+alturaQueBuscamos = anchoDelMapa * 600 / 800
+
+mapa.width = anchoDelMapa
+mapa.height = alturaQueBuscamos
 //-------------IMAGENES----------------------------------------
 let kyoshiImage = new Image(200, 400);
 kyoshiImage.src = "./images/kyoshi.jpg";
@@ -76,7 +79,7 @@ class Avatar {
     this.ataques = [];
     this.ancho = 80;
     this.alto = 80;
-    this.x = aleatorio(0, mapa.width - this.ancho)
+    this.x = aleatorio(0, mapa.width - this.ancho);
     this.y = aleatorio(0, mapa.height - this.alto);
     this.velocidadX = 0;
     this.velocidadY = 0;
@@ -205,10 +208,8 @@ function seleccionarAvatarJugador() {
 }
 
 function iniciarMapa() {
-   avatarElegido = personaje(avatarJugador);
-   intervalo = setInterval(mostrarCanvas, 50);
- 
- 
+  avatarElegido = personaje(avatarJugador);
+  intervalo = setInterval(mostrarCanvas, 50);
 
   window.addEventListener("keydown", teclaPresionada);
   window.addEventListener("keyup", detenerMovimiento);
