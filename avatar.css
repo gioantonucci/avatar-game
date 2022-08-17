@@ -30,6 +30,8 @@ h2 {
 span {
   font-family: "Herculanum", sans-serif;
 }
+
+
 .logo {
   height: 110px;
   width: 300px;
@@ -138,9 +140,19 @@ button:hover {
   padding: 24px;
   border-radius: 5%;
 }
+#mostrar-mapa {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#mapa {
+  border: solid 2px white;
+}
+
 
 @media (max-width: 360px) {
   .cards, .buttons {
     flex-direction: column;
   }
 }
+

@@ -18,6 +18,17 @@
       </div>
       <button id="boton-avatar">SELECCIONAR</button>
     </section>
+    <section id="mostrar-mapa">
+      <h2 class="title">Recorre el mapa con tu Avatar!
+      </h2>
+      <canvas id="mapa"></canvas>
+      <div class="buttons">
+      <button title="up" onmouseup="detenerMovimiento()" onmousedown="moverArriba() ">Arriba</button>
+      <button title="left" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+      <button title="down" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+      <button title="right" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+    </div>
+    </section>
     <section id="seleccionar-ataque">
       <div class="seleccionar-ataque">
         <div id="avatar-jugador-elegido"></div>
