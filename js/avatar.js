@@ -38,18 +38,18 @@ let vidasJugador = 3;
 let vidasEnemigo = 3;
 let lienzo = mapa.getContext("2d");
 let intervalo;
-let alturaQueBuscamos
-let anchoDelMapa = window.innerWidth - 20
-const anchoMaximoDelMapa = 800
+let alturaQueBuscamos;
+let anchoDelMapa = window.innerWidth - 20;
+const anchoMaximoDelMapa = 800;
 
 if (anchoDelMapa > anchoMaximoDelMapa) {
-    anchoDelMapa = anchoMaximoDelMapa - 20
+  anchoDelMapa = anchoMaximoDelMapa - 20;
 }
 
-alturaQueBuscamos = anchoDelMapa * 600 / 800
+alturaQueBuscamos = (anchoDelMapa * 600) / 800;
 
-mapa.width = anchoDelMapa
-mapa.height = alturaQueBuscamos
+mapa.width = anchoDelMapa;
+mapa.height = alturaQueBuscamos;
 //-------------IMAGENES----------------------------------------
 let kyoshiImage = new Image(200, 400);
 kyoshiImage.src = "./images/kyoshi.jpg";
@@ -99,54 +99,20 @@ let rokuEnemigo = new Avatar("Roku", rokuImage, 3, rokuPJ);
 let korraEnemigo = new Avatar("Korra", korraImage, 3, korraPJ);
 let aangEnemigo = new Avatar("Aang", aangImage, 3, aangPJ);
 
-kyoshi.ataques.push(
+ataqueTodos = [
   { nombre: "fuego", id: "boton-fuego" },
   { nombre: "agua", id: "boton-agua" },
   { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-roku.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-korra.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-aang.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-kyoshiEnemigo.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-rokuEnemigo.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-korraEnemigo.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
-aangEnemigo.ataques.push(
-  { nombre: "fuego", id: "boton-fuego" },
-  { nombre: "agua", id: "boton-agua" },
-  { nombre: "tierra", id: "boton-tierra" },
-  { nombre: "aire", id: "boton-aire" }
-);
+  { nombre: "aire", id: "boton-aire" },
+];
+kyoshi.ataques.push(...ataqueTodos);
+roku.ataques.push(...ataqueTodos);
+korra.ataques.push(...ataqueTodos);
+aang.ataques.push(...ataqueTodos);
+kyoshiEnemigo.ataques.push(...ataqueTodos);
+rokuEnemigo.ataques.push(...ataqueTodos);
+korraEnemigo.ataques.push(...ataqueTodos);
+aangEnemigo.ataques.push(...ataqueTodos);
 
 avatars.push(kyoshi, roku, korra, aang);
 //---------------------FUNCIONES---------------------
@@ -180,10 +146,7 @@ function iniciarJuego() {
 }
 function seleccionarAvatarJugador() {
   sectionMapa.style.display = "flex";
-
-  sectionSeleccionarAvatar.style.display = "none";
   botonReiniciar.style.display = "none";
-
   if (inputKyoshi.checked) {
     spanavatarJugador.innerHTML = kyoshi.nombre;
     imgAvatarJugador.appendChild(kyoshi.imagen);
@@ -202,7 +165,10 @@ function seleccionarAvatarJugador() {
     avatarJugador = inputAang.id;
   } else {
     alert("Selecciona un avatar para empezar!");
+    sectionMapa.style.display = "none";
+    return;
   }
+  sectionSeleccionarAvatar.style.display = "none";
   extraerAtaques(avatarJugador);
   iniciarMapa();
 }

@@ -2,7 +2,7 @@ body {
   background-image: url(./images/mapa.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: full;
+  width: auto;
   background-position: center center;
   display: flex;
   flex-direction: column;
