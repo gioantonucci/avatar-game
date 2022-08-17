@@ -111,6 +111,30 @@ aang.ataques.push(
   { nombre: "tierra", id: "boton-tierra" },
   { nombre: "aire", id: "boton-aire" }
 );
+kyoshiEnemigo.ataques.push(
+  { nombre: "fuego", id: "boton-fuego" },
+  { nombre: "agua", id: "boton-agua" },
+  { nombre: "tierra", id: "boton-tierra" },
+  { nombre: "aire", id: "boton-aire" }
+);
+rokuEnemigo.ataques.push(
+  { nombre: "fuego", id: "boton-fuego" },
+  { nombre: "agua", id: "boton-agua" },
+  { nombre: "tierra", id: "boton-tierra" },
+  { nombre: "aire", id: "boton-aire" }
+);
+korraEnemigo.ataques.push(
+  { nombre: "fuego", id: "boton-fuego" },
+  { nombre: "agua", id: "boton-agua" },
+  { nombre: "tierra", id: "boton-tierra" },
+  { nombre: "aire", id: "boton-aire" }
+);
+aangEnemigo.ataques.push(
+  { nombre: "fuego", id: "boton-fuego" },
+  { nombre: "agua", id: "boton-agua" },
+  { nombre: "tierra", id: "boton-tierra" },
+  { nombre: "aire", id: "boton-aire" }
+);
 
 avatars.push(kyoshi, roku, korra, aang);
 //---------------------FUNCIONES---------------------
