@@ -88,7 +88,6 @@ class Avatar {
     lienzo.drawImage(this.mapaFoto, this.x, this.y, this.ancho, this.alto);
   }
 }
-
 let kyoshi = new Avatar("Kyoshi", kyoshiImage, 3, kyoshiPJ);
 let roku = new Avatar("Roku", rokuImage, 3, rokuPJ);
 let korra = new Avatar("Korra", korraImage, 3, korraPJ);
