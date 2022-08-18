@@ -88,10 +88,10 @@ class Avatar {
     lienzo.drawImage(this.mapaFoto, this.x, this.y, this.ancho, this.alto);
   }
 }
-let kyoshi = new Avatar("Kyoshi", kyoshiImage, 3, kyoshiPJ);
-let roku = new Avatar("Roku", rokuImage, 3, rokuPJ);
-let korra = new Avatar("Korra", korraImage, 3, korraPJ);
-let aang = new Avatar("Aang", aangImage, 3, aangPJ);
+let kyoshi = new Avatar("kyoshi", kyoshiImage, 3, kyoshiPJ);
+let roku = new Avatar("roku", rokuImage, 3, rokuPJ);
+let korra = new Avatar("korra", korraImage, 3, korraPJ);
+let aang = new Avatar("aang", aangImage, 3, aangPJ);
 
 let kyoshiEnemigo = new Avatar("Kyoshi", kyoshiImage, 3, kyoshiPJ);
 let rokuEnemigo = new Avatar("Roku", rokuImage, 3, rokuPJ);
@@ -124,6 +124,7 @@ function iniciarJuego() {
   sectionMapa.style.display = "none";
 
   avatars.forEach((avatar) => {
+    console.log(avatar.nombre)
     opcionDeAvatars = `
     <input type="radio" name="avatar" id="${avatar.nombre}" /><label
             class="card"
@@ -134,10 +135,10 @@ function iniciarJuego() {
           </label>
     `;
     contenedorTarjetas.innerHTML += opcionDeAvatars;
-    inputKyoshi = document.getElementById("Kyoshi");
-    inputRoku = document.getElementById("Roku");
-    inputKorra = document.getElementById("Korra");
-    inputAang = document.getElementById("Aang");
+    inputKyoshi = document.getElementById("kyoshi");
+    inputRoku = document.getElementById("roku");
+    inputKorra = document.getElementById("korra");
+    inputAang = document.getElementById("aang");
   });
 
   botonAvatarJugador.addEventListener("click", seleccionarAvatarJugador);
