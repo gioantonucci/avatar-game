@@ -1,4 +1,5 @@
-@import url(//db.onlinewebfonts.com/c/002b944b211d383987536f1ecf684bca?family=Herculanum);
+@import url('http://fonts.cdnfonts.com/css/herculanum-lt-pro');
+
 body {
   background-image: url(./images/mapa.jpg);
   background-repeat: no-repeat;
@@ -24,13 +25,13 @@ input {
   display: none;
 }
 h2 {
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   display: flex;
   justify-content: center;
 }
 
 span {
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
 }
 
 
@@ -47,7 +48,7 @@ span {
   gap: 20px;
 }
 .card {
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +80,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items:center ;
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   padding: 16px;
   margin: 16px;
   border-radius: 15px;
@@ -107,7 +108,7 @@ button:hover {
 
 #mensajes {
   background-color: #e0e0e0;
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   padding: 40px;
   border-radius: 20px;
   display: flex;
@@ -133,7 +134,7 @@ button:hover {
 }
 
 .stats {
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   background-color: #facd8c;
   margin: 24px;
   display: flex;
@@ -152,7 +153,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items:center ;
-  font-family: "Herculanum", sans-serif;
+  font-family: 'Herculanum LT Pro', sans-serif;
   width: 80px;
   height: 40px;
   padding: 5px;
