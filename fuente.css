@@ -1,6 +1,9 @@
 @font-face {
     font-family: Herculanum;
-    src: local("Herculanum-Regular"),
-    local("Herculanum Regular"),
+    src: url("//db.onlinewebfonts.com/t/002b944b211d383987536f1ecf684bca.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/002b944b211d383987536f1ecf684bca.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/002b944b211d383987536f1ecf684bca.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/002b944b211d383987536f1ecf684bca.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/002b944b211d383987536f1ecf684bca.svg#Herculanum") format("svg");
 }
 
