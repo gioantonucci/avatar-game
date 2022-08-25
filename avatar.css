@@ -41,7 +41,9 @@ footer, p, a {
   font-size: larger;
   margin-top: 2px;
 }
-
+a:hover {
+  color: #facd8c
+}
 
 .logo {
   height: 110px;
